@@ -12,10 +12,40 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+int max(int a, int b, int c, int d);
+int main()
+{
+    int a,b,c,d;
+    scanf("%d %d %d %d",&a, &b, &c, &d);
+    int x = max(a,b,c,d);
+    printf("%d",x);
+}
+int max(int a, int b, int c, int d)
+{
+    if(a>b && a>c && a>d)
+    {
+        return a;
+    }
+    else if (b>c && b>d)
+    {
+        return b;
+    }
+    else if(c>d)
+    {
+        return c;
+    }
+    else
+    {
+        return d;
+    }
+}
+```
 
 Output:
-//paste your output here
+
+<img width="1173" height="381" alt="443752766-a7668328-620f-49ba-bccb-01c3e9b696f7" src="https://github.com/user-attachments/assets/edeccdbd-88cb-40cb-af7e-dcd9d0ee75bb" />
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,10 +66,50 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
+```
+#include <stdio.h>
+void maximum(int n, int k);
+int main() 
+{
+    int n, k;
+    scanf("%d %d", &n, &k);
+    maximum(n, k);
+}
+
+void maximum(int n, int k)
+{
+    int maxand = 0;
+    int maxor = 0;
+    int maxxor = 0;
+    for (int i = 1; i < n; i++) 
+    {
+        for (int j = i+1; j <= n; j++)
+        {
+            int andval = i & j;
+            int orval = i | j;
+            int xorval = i ^ j;
+
+            if (andval < k && andval > maxand) 
+            {
+                maxand = andval;
+            }
+            if (orval < k && orval > maxor)
+            {
+                maxor = orval;
+            }
+            if (xorval < k && xorval > maxxor)
+            {
+                maxxor = xorval;
+            }
+        }
+    }
+    printf("%d\n%d\n%d\n", maxand,maxor,maxxor);
+}
+```
 
 Output:
-//paste your output here
+
+<img width="1175" height="422" alt="443753479-3d6d9eeb-44af-4441-9c51-907477d47503" src="https://github.com/user-attachments/assets/794943c3-4de7-4008-a08e-817d7cf48fa9" />
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -59,10 +129,41 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int s;
+    int n;
+    scanf("%d %d",&s,&n);
+    int lib[1000][1000]={0};
+    int cnt[1000]={0};
+    for(int i=0;i<n;i++)
+    {
+        int qt,x,y;
+        scanf("%d",&qt);
+        if(qt==1)
+        {
+            scanf("%d %d",&x,&y);
+            lib[x][cnt[x]]=y;
+            cnt[x]++;
+        }
+        if(qt==2)
+        {
+            scanf("%d %d",&x,&y);
+            printf("%d",lib[x][y]);
+        }
+        if(qt==3)
+        {
+            scanf("%d",&x);
+            printf("%d",cnt[x]);
+        }
+    }
+}
+```
 Output:
-//paste your output here
+
+<img width="1183" height="287" alt="443754188-97f9d525-d417-41e5-812d-e2e79eaa61fb" src="https://github.com/user-attachments/assets/100592cb-58ef-47df-939c-ac99795024ce" />
 
 
 Result:
@@ -86,10 +187,31 @@ Algorithm:
 
 
 Program:
-//type your code here
+```
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n;
+    int s=0;
+    scanf ("%d",&n);
+    int *ptr;
+    ptr=(int*)malloc(n*sizeof (int));
+    for (int i=0;i<n;i++)
+    {
+        scanf ("%d",ptr+i);
+    }
+     for (int i=0;i<n;i++)
+     {
+         s+=ptr[i];
+     }
+     printf ("%d",s);
+}
+```
 
 Output:
-//paste your output here
+
+<img width="1173" height="280" alt="443755250-430bd067-5dca-46c2-9d3d-de890adeb6d4" src="https://github.com/user-attachments/assets/eaa997a9-f321-4e1f-8b6f-f9e10780e09f" />
 
  
 
@@ -120,12 +242,30 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
+```
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main()
+{
+    char a[100];
+    scanf("%[^\n]",a);
+    int c=1;
+    for(int i=0; a[i]!='\0'; i++)
+    {
+        if(a[i]==32)
+        {
+            c++;
+        }
+    }
+    printf("%d",c);
+}
+```
 
 Output:
-//paste your output here
 
 
+<img width="1172" height="238" alt="443761718-0862df1e-2ba3-4345-a08e-d79a6716c591" src="https://github.com/user-attachments/assets/663bb81d-7a3a-4d47-9eaf-9b7aeb6b73d5" />
 
 Result:
 
