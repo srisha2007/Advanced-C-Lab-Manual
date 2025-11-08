@@ -10,11 +10,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
+
+void search(char data)
+{
+    struct Node* temp;
+    temp = head;
+    char item = data;
+    int i = 1;
+    if(temp == NULL)
+    {
+        printf("No elements\n");
+    }
+    else
+    {
+        while (temp != NULL) 
+        {
+            if (temp->data == item) 
+            {
+                printf("item %c found at location %d\n", item, i);
+                return;
+            }
+            temp = temp->next;
+            i++;    
+        }
+        printf("Item not found\n");
+    }
+}
+```
 
 Output:
 
-//paste your output here
+
+<img width="1186" height="536" alt="443103468-c516812d-5035-4fa7-8bd2-2e075ccfcefe" src="https://github.com/user-attachments/assets/f8cd5de9-75b4-49bb-86ec-719c34e730a7" />
 
 
 
@@ -33,14 +65,42 @@ Algorithm:
 4.	Call the insert function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    int data; 
+    struct Node *next;
+}*head;
 
-//type your code here
+
+void insert(int data)
+{
+    struct Node *temp, *n;
+    n = (struct Node*)malloc(sizeof(struct Node));
+    if(head == NULL)
+    {
+        head = n;
+        head->data = data;
+    }
+    else
+    {
+        n->data = data;
+        n->next = NULL;
+        temp = head;
+        while(temp->next != NULL)
+            temp = temp->next;
+        temp->next = n;
+    }
+    
+}
+```
+
 
 Output:
 
-//paste your output here
 
- 
+
+ <img width="1182" height="562" alt="443104284-9b5217d8-1a49-4089-98a5-d8eaef95803b" src="https://github.com/user-attachments/assets/cfcee185-932c-4bd6-804c-bb8d7360a778" />
+
 Result:
 Thus, the program to insert a node in a linked list is verified successfully.
 
@@ -57,12 +117,31 @@ Algorithm:
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
 
-//type your code here
+void display()
+{
+    struct Node *temp;
+    temp = head;
+    while(temp != NULL)
+    {
+        printf("%d ",temp->data);
+        temp = temp->next;
+    }
+}
+```
+
 
 Output:
+<img width="1167" height="543" alt="443105947-6aa319f4-fbb4-4cab-95e1-9bf83ed28eb1" src="https://github.com/user-attachments/assets/0587e268-fa07-4902-865f-5d9859a58cc7" />
 
-//paste your output here
+
 
 
 Result:
@@ -83,11 +162,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
+
+void insert(float data)
+{
+    struct Node *n, *temp;
+    n = (struct Node*)malloc(sizeof(struct Node));
+    n->data = data;
+    n->next = NULL;
+    n->prev = NULL:
+    if(head == NULL)
+    {
+        head = n;
+        head->data = data;
+    }
+    else
+    {
+        temp = head;
+        while(temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = n;
+        n->prev = temp;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="1187" height="512" alt="443106822-4163e556-ee5e-4ef1-bb7d-402638c2d282" src="https://github.com/user-attachments/assets/a01dafe4-fb22-4f97-956d-131772ff0134" />
+
 
 
 Result:
@@ -125,12 +236,42 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
+
+void delete()
+{
+    struct Node *temp;
+    temp = head;
+    if(head == NULL)
+    {
+        printf("UNDERFLOW\n");
+    }
+    else if(head->next == NULL)
+    {
+        head = NULL;
+        free(head);
+        printf("node deleted\n");
+    }
+    else
+    {
+        temp = head;
+        head = head->next;
+        free(temp);
+        printf("node deleted\n");
+    }
+}
+```
 
 Output:
 
-//paste your output here
 
+<img width="1182" height="705" alt="443108353-b4bdeb5c-e878-45d4-90d3-5e581914c17f" src="https://github.com/user-attachments/assets/4266598c-6268-444e-bf83-292aa6c7ac5f" />
 
 
 
