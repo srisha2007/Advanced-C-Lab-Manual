@@ -7,7 +7,7 @@ Algorithm:
 2.	Input Validation
 3.	Switch Statement cases.
 -	Case 5: Print "seventy one"
--	Case 6: Print "seventy two"
+-	Case 6: Print "seventy two" 
 -	Case 13: Print "seventy three"
 -	...
 -	Case 13: Print "seventy nine"
